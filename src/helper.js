@@ -1,6 +1,6 @@
 const createSmoothScroll = () => {
   let top = 0;
-  const dy = 1;
+  const dy = 5;
   let step = dy;
 
   //Used to get the target element's bounding box
@@ -8,7 +8,7 @@ const createSmoothScroll = () => {
   const getCurrentElem = (id) =>
     document.getElementById(id).getBoundingClientRect();
 
-  return (duration = 0, offset = 20, elID) => {
+  return (elID, offset = 25, duration = 0) => {
     if (getCurrentElem(elID).top > 0) step = dy;
     else step = -dy;
 
